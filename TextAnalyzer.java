@@ -4,7 +4,7 @@ public class TextAnalyzer
 {
   public static void main(String[] args)
   {
-    //main method in use for testing purposes only
+    //main method in use for testing purposes only at this point
     System.out.println("" + countCharacters("test.txt"));
     System.out.println("" + countWords("test.txt"));
     System.out.println("" + countLines("test.txt"));
