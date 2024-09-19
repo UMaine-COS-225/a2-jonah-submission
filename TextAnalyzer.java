@@ -4,9 +4,9 @@ public class TextAnalyzer
 {
   public static void main(String[] args)
   {
+    System.out.println("" + countCharacters("test.txt"));
   }
 
-  //TODO: Finish countCharacters
   public static int countCharacters(String fileName)
   {
     int result = 0;
@@ -18,7 +18,6 @@ public class TextAnalyzer
     return result;
   }
 
-  //TODO: Finish getContents
   private static String getContents(String fileName)
   {
     try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
@@ -28,8 +27,8 @@ public class TextAnalyzer
       while (line != null)
       {
         contents += line;
+        contents += "\n";
         line = reader.readLine();
-      //TODO: Ensure getContents works as intended.
       }
       return contents;
     }
