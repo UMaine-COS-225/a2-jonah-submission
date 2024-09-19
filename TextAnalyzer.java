@@ -63,6 +63,20 @@ public class TextAnalyzer
                   countCharacterFrequency(String fileName)
   {
     HashMap<Character, Integer> result = new HashMap<Character, Integer>();
+    String contents = getContents(fileName);
+    for (int i = 0; i < contents.length(); i++)
+    {
+      char currentChar = contents.charAt(i);
+      if (result.containsKey(currentChar))
+      {
+        result.put(currentChar, contents.get(currentChar) + 1);
+      }
+      else
+      {
+        result.put(currentChar, 1);
+      }
+    }
+    return result;
   }
 
   private static String getContents(String fileName)
