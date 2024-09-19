@@ -4,7 +4,9 @@ public class TextAnalyzer
 {
   public static void main(String[] args)
   {
+    //main method in use for testing purposes only
     System.out.println("" + countCharacters("test.txt"));
+    System.out.println("" + countLines("test.txt"));
   }
 
   public static int countCharacters(String fileName)
@@ -14,6 +16,20 @@ public class TextAnalyzer
     for (int i = 0; i < contents.length(); i++)
     {
       result++;
+    }
+    return result;
+  }
+
+  public static int countLines(String fileName)
+  {
+    int result = 0;
+    String contents = getContents(fileName);
+    for (int i = 0; i < contents.length(); i++)
+    {
+      if (contents.charAt(i) == '\n')
+      {
+        result++;
+      }
     }
     return result;
   }
@@ -39,4 +55,5 @@ public class TextAnalyzer
       return "";
     }
   }
+
 }
