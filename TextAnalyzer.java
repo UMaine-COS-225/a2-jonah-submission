@@ -6,6 +6,7 @@ public class TextAnalyzer
   {
     //main method in use for testing purposes only
     System.out.println("" + countCharacters("test.txt"));
+    System.out.println("" + countWords("test.txt"));
     System.out.println("" + countLines("test.txt"));
   }
 
@@ -16,6 +17,28 @@ public class TextAnalyzer
     for (int i = 0; i < contents.length(); i++)
     {
       result++;
+    }
+    return result;
+  }
+
+  public static int countWords(String fileName)
+  {
+    int result = 0;
+    String contents = getContents(fileName);
+    for (int i = 1; i < contents.length(); i++)
+    {
+      if ((contents.charAt(i-1) == ' ' ||
+           contents.charAt(i-1) == '\n') &&
+           contents.charAt(i) != ' ' &&
+           contents.charAt(i) != '\n')
+      {
+        result++;
+      }
+    }
+    if (contents.charAt(0) != ' ' &&
+        contents.charAt(0) != '\n')
+    {
+      result++; //checking case for the first character starting a word
     }
     return result;
   }
@@ -55,5 +78,4 @@ public class TextAnalyzer
       return "";
     }
   }
-
 }
