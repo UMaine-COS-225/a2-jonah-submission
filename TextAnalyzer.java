@@ -10,6 +10,7 @@ public class TextAnalyzer
     System.out.println("" + countCharacters("test.txt"));
     System.out.println("" + countWords("test.txt"));
     System.out.println("" + countLines("test.txt"));
+    writeCharacterFrequency(countCharacterFrequency("test.txt"), "test2.txt");
   }
 
   public static int countCharacters(String fileName)
@@ -69,7 +70,7 @@ public class TextAnalyzer
       char currentChar = contents.charAt(i);
       if (result.containsKey(currentChar))
       {
-        result.put(currentChar, contents.get(currentChar) + 1);
+        result.put(currentChar, result.get(currentChar) + 1);
       }
       else
       {
@@ -77,6 +78,26 @@ public class TextAnalyzer
       }
     }
     return result;
+  }
+
+  public static void writeCharacterFrequency(
+      HashMap<Character, Integer> charFrequency, String fileName)
+  {
+    try
+    {
+      FileWriter writer = new FileWriter(fileName);
+      for (Character charKey : charFrequency.keySet())
+      {
+        writer.write(charKey + "," + charFrequency.get(charKey) + "\n");
+      }
+      writer.close();
+    }
+    catch (IOException e)
+    {
+      System.out.println(
+          "Something happened when trying to write to the file");
+      e.printStackTrace();
+    }
   }
 
   private static String getContents(String fileName)
