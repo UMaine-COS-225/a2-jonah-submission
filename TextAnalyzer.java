@@ -1,9 +1,11 @@
 import java.io.*;
+import java.util.HashMap;
 
 public class TextAnalyzer
 {
   public static void main(String[] args)
   {
+    //TODO: Finish main method
     //main method in use for testing purposes only at this point
     System.out.println("" + countCharacters("test.txt"));
     System.out.println("" + countWords("test.txt"));
@@ -55,6 +57,12 @@ public class TextAnalyzer
       }
     }
     return result;
+  }
+
+  public static HashMap<Character, Integer>
+                  countCharacterFrequency(String fileName)
+  {
+    HashMap<Character, Integer> result = new HashMap<Character, Integer>();
   }
 
   private static String getContents(String fileName)
