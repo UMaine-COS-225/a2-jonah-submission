@@ -80,6 +80,36 @@ public class TextAnalyzer
     return result;
   }
 
+  public static HashMap<String, Integer> countWordFrequency(String fileName)
+  {
+    HashMap<String, Integer> result = new HashMap<String, Integer>();
+    String contents = getContents(fileName);
+    String word = "";
+    for (int i = 0; i < contents.length(); i++)
+    {
+      if (contents.charAt(i) == ' ' || contents.charAt(i) == '\n')
+      {
+        if (word != "")
+        {
+          if (result.containsKey(word))
+          {
+            result.put(word, result.get(word) + 1);
+          }
+          else
+          {
+            result.put(word, 1);
+          }
+        }
+        word = "";
+      }
+      else
+      {
+        word += contents.charAt(i);
+      }
+    }
+    return result;
+  }
+
   public static void writeCharacterFrequency(
       HashMap<Character, Integer> charFrequency, String fileName)
   {
