@@ -5,14 +5,13 @@ public class TextAnalyzer
 {
   public static void main(String[] args)
   {
-    //TODO: Finish main method
-    //TODO: Ensure write/count Word Frequency methods work as intended
-    //main method in use for testing purposes only at this point
-    System.out.println("" + countCharacters("test.txt"));
-    System.out.println("" + countWords("test.txt"));
-    System.out.println("" + countLines("test.txt"));
-    writeCharacterFrequency(countCharacterFrequency("test.txt"), "test2.txt");
-    writeWordFrequency(countWordFrequency("test.txt"), "test3.txt");
+    //TODO: Fix word logic in countWordFrequency, and potentially countWords
+    //TODO: and countLines
+    System.out.println("" + countCharacters(args[0]));
+    System.out.println("" + countWords(args[0]));
+    System.out.println("" + countLines(args[0]));
+    writeCharacterFrequency(countCharacterFrequency(args[0]), args[1]);
+    writeWordFrequency(countWordFrequency(args[0]), args[2]);
   }
 
   public static int countCharacters(String fileName)
