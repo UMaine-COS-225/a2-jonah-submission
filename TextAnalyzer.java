@@ -6,11 +6,13 @@ public class TextAnalyzer
   public static void main(String[] args)
   {
     //TODO: Finish main method
+    //TODO: Ensure write/count Word Frequency methods work as intended
     //main method in use for testing purposes only at this point
     System.out.println("" + countCharacters("test.txt"));
     System.out.println("" + countWords("test.txt"));
     System.out.println("" + countLines("test.txt"));
     writeCharacterFrequency(countCharacterFrequency("test.txt"), "test2.txt");
+    writeWordFrequency(countWordFrequency("test.txt"), "test3.txt");
   }
 
   public static int countCharacters(String fileName)
@@ -119,6 +121,26 @@ public class TextAnalyzer
       for (Character charKey : charFrequency.keySet())
       {
         writer.write(charKey + "," + charFrequency.get(charKey) + "\n");
+      }
+      writer.close();
+    }
+    catch (IOException e)
+    {
+      System.out.println(
+          "Something happened when trying to write to the file");
+      e.printStackTrace();
+    }
+  }
+
+  public static void writeWordFrequency(
+      HashMap<String, Integer> wordFrequency, String fileName)
+  {
+    try
+    {
+      FileWriter writer = new FileWriter(fileName);
+      for (String wordKey : wordFrequency.keySet())
+      {
+        writer.write(wordKey + "," + wordFrequency.get(wordKey) + "\n");
       }
       writer.close();
     }
