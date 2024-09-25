@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class TextAnalyzer
 {
-  private String punctuation = ",.;:/?!`\"\'"
+  private static String punctuation = ",.;:/?!`\"\'";
   public static void main(String[] args)
   {
     //TODO: Fix word logic in countWordFrequency, and potentially countWords
@@ -34,17 +34,18 @@ public class TextAnalyzer
     {
       if ((contents.charAt(i-1) == ' ' ||
            contents.charAt(i-1) == '\n' ||
-           punctuation.contains(contents.charAt(i-1))) &&
+           punctuation.contains(contents.substring(i-1, i))) &&
            contents.charAt(i) != ' ' &&
            contents.charAt(i) != '\n' &&
-           !(punctuation.contains(contents.charAt(i))))
+           !(punctuation.contains(contents.substring(i, i+1))))
       {
         result++;
       }
     }
-    if (contents.charAt(0) != ' ' &&
+    if (contents != "" &&
+        contents.charAt(0) != ' ' &&
         contents.charAt(0) != '\n' &&
-        !(punctuation.contains(contents.charAt(0))))
+        !(punctuation.contains(contents.substring(0, 1))))
     {
       result++; //checking case for the first character starting a word
     }
@@ -92,7 +93,8 @@ public class TextAnalyzer
     String word = "";
     for (int i = 0; i < contents.length(); i++)
     {
-      if (contents.charAt(i) == ' ' || contents.charAt(i) == '\n')
+      if (contents.charAt(i) == ' ' || contents.charAt(i) == '\n' ||
+          punctuation.contains(contents.substring(i, i+1)))
       {
         if (word != "")
         {
