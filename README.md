@@ -3,7 +3,7 @@
 
 **Name** - Jonah Dean
 
-**Resources** - 
+**Resources** - Vijayanta Jain — vijayanta.jain@maine.edu
 
 **Introspection** - I've done some programming in Java already in my high
                     school AP CSA class. I've seen how to program in an
