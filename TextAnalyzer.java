@@ -6,8 +6,6 @@ public class TextAnalyzer
   private static String punctuation = ",.;:/?!`\"\'";
   public static void main(String[] args)
   {
-    //TODO: Fix word logic in countWordFrequency, and potentially countWords
-    //TODO: and countLines
     System.out.println("" + countCharacters(args[0]));
     System.out.println("" + countWords(args[0]));
     System.out.println("" + countLines(args[0]));
