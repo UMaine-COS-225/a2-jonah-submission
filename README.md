@@ -1,17 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/NUlwhsv2)
-# A2-TextAnalyzer
+# Jonah's A2 Submission
 
-**Name** - Jonah Dean
+Review the commit history and commit messages to understand how to iteratively work on an assignment and how to commit.
 
-**Resources** - Vijayanta Jain — vijayanta.jain@maine.edu
-
-**Introspection** - I've done some programming in Java already in my high
-                    school AP CSA class. I've seen how to program in an
-                    object-oriented way, but there is still a lot I've used in
-                    this project that I've not seen before now. This includes
-                    the concept of a Dictionary, which I had not seen before
-                    this class. Reading and writing to files in a program is
-                    also new to me.
 
 *DO NOT EDIT BELOW THIS LINE*
 -----------------------------------------------------------------------------------------------------------------------------------------------
